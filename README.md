@@ -32,3 +32,39 @@ Use:
 
 - `calc32.dll` → 32-bit targets
 - `calc64.dll` → 64-bit targets
+
+## Testing DLL
+
+Copy the DLL to a Windows machine and load it.
+
+### Test x86 DLL
+
+```cmd
+rundll32 calc32.dll,DllMain
+```
+
+### Test x64 DLL
+
+```cmd
+rundll32 calc64.dll,DllMain
+```
+
+If successful:
+
+```text
+Calculator application opens
+```
+
+Optional verification:
+
+```cmd
+regsvr32 calc32.dll
+regsvr32 calc64.dll
+```
+
+Expected result:
+
+```text
+DLL loads successfully
+Calculator opens
+```
